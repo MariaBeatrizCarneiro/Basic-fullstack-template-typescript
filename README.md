@@ -1,40 +1,76 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/pages/api-reference/create-next-app).
+# 🚀 Ver e Adicionar Nomes App (TypeScript)
 
-## Getting Started
+Uma aplicação fullstack para ver e adicionar nomes desenvolvida com Next.js, Express e MongoDB, usando TypeScript.
 
-First, run the development server:
+## Tecnologias Utilizadas
 
+- **Frontend**: Next.js + React + TailwindCSS + TypeScript
+- **Backend**: Express.js + Node.js + TypeScript
+- **Base de Dados**: MongoDB + Mongoose
+- **Dev Tools**: Nodemon, TSX, ESLint
+
+## Funcionalidades
+
+### Interface Única com 2 Componentes:
+1. **VerNomes.tsx** - Visualizar os nomes existentes na base de dados.
+2. **AdicionarNomes.tsx** - Adicionar um nome novo à base de dados.
+
+### API REST com 2 Endpoints:
+- `GET /api/nomes`
+- `POST /api/nomes`
+
+### Base de Dados MongoDB:
+- **nomes** → `{ _id: string, nome: string }`
+
+## Como Executar
+
+### 1. Instalar Dependências
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm install
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### 2. Configurar Variáveis de Ambiente
+Criar ficheiro `.env` na raiz:
+```env
+MONGODB_URI=mongodb+srv://username:password@cluster.mongodb.net/database?retryWrites=true&w=majority
+NODE_ENV=development
+PORT=3000
+```
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+### 3. Executar Aplicação
+```bash
+npm run dev
+```
 
-[API routes](https://nextjs.org/docs/pages/building-your-application/routing/api-routes) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+### 4. Aceder à Aplicação
+- **Interface**: http://localhost:3000
+- **API Nomes**: http://localhost:3000/api/nomes
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/pages/building-your-application/routing/api-routes) instead of React pages.
+## Estrutura do Projeto
 
-This project uses [`next/font`](https://nextjs.org/docs/pages/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```
+├── lib/
+│   └── mongodb.ts              # Conexão MongoDB
+├── models/
+│   └── Nome.ts                 # Schema Nomes
+├── src/
+│   ├── components/
+│   │   ├── AdicionarNomes.tsx  # Componente
+│   │   └── VerNomes.tsx        # Componente
+│   ├── pages/
+│   │   ├── index.tsx           # Página principal
+│   │   ├── _app.tsx
+│   │   └── _document.tsx
+│   ├── services/
+│   │   └── api.ts              # Funções API
+│   └── styles/
+│       └── globals.css
+├── server.ts                   # Servidor Express
+├── tsconfig.json               # Configuração TypeScript
+├── package.json
+└── README.md
+```
 
-## Learn More
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn-pages-router) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/pages/building-your-application/deploying) for more details.
+## Desenvolvido por Maria Beatriz Carneiro
+**Desafio Básico** - Ver e adicionar nomes com Next.js, Express, MongoDB e TypeScript.
