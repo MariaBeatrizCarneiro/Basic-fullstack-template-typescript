@@ -1,0 +1,12 @@
+{
+  "watch": ["server.ts", "src/", "models/", "lib/"],
+  "ignore": [
+    "node_modules/",
+    ".next/",
+    "public/",
+    "*.log",
+    "db.json"
+  ],
+  "ext": "ts,tsx",
+  "delay": 2000
+}
